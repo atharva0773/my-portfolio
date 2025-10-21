@@ -53,7 +53,7 @@ function Work() {
                 View Project
               </a>
               <a
-                href="#"
+                href="https://github.com/atharva0773/leetMatric"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-blue-400 transition-colors"
@@ -81,7 +81,7 @@ function Work() {
           <div className="flex-1 flex flex-col justify-between space-y-4">
             <div>
               <h3 className="text-xl md:text-2xl font-semibold text-blue-400">
-                Project 02
+                Fire Mail
               </h3>
               <p className="text-sm md:text-base text-gray-300 mt-2">
                 Another amazing React project with responsive design and elegant
@@ -89,13 +89,13 @@ function Work() {
               </p>
               <div className="flex space-x-4 mt-2 text-sm text-blue-400">
                 <span>React</span>
-                <span>Framer Motion</span>
+                <span>Firebase</span>
               </div>
             </div>
 
             <div className="flex items-center mt-4 space-x-4">
               <a
-                href=""
+                href="https://github.com/atharva0773/fire-mail"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-4 py-2 border border-blue-400 rounded-md hover:bg-blue-400 hover:text-white transition-colors duration-300"
@@ -103,7 +103,7 @@ function Work() {
                 View Project
               </a>
               <a
-                href="#"
+                href="https://github.com/atharva0773/fire-mail"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-blue-400 transition-colors"
