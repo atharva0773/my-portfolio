@@ -1,5 +1,5 @@
 import React from 'react'
-
+import profile from "../../assets/proflie.jpg"
 function About() {
   return (
     <section id="about" className="min-h-screen text-stone-400 px-4 md:px-16 lg:px-32 py-16 mb-16">
@@ -46,7 +46,7 @@ function About() {
         {/* Image Section */}
         <div className="flex-1 flex justify-center mt-6 md:mt-0">
   <img
-    src="https://images.pexels.com/photos/19312410/pexels-photo-19312410.jpeg"
+    src={profile}
     alt="profile"
     className="
       w-56 h-56 sm:w-56 sm:h-56 md:w-75 md:h-75
