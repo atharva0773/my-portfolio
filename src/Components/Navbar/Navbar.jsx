@@ -52,6 +52,19 @@ function Navbar() {
           <li>
             03.
             <NavLink
+              to="/skill"
+              className={({ isActive }) =>
+                `ml-1 transition-colors duration-200 hover:text-blue-400 ${
+                  isActive ? "text-blue-400" : "text-gray-300"
+                }`
+              }
+            >
+              Skill
+            </NavLink>
+          </li>
+          <li>
+            04.
+            <NavLink
               to="/contact"
               className={({ isActive }) =>
                 `ml-1 transition-colors duration-200 hover:text-blue-400 ${
@@ -62,6 +75,7 @@ function Navbar() {
               Contact
             </NavLink>
           </li>
+          
           <li>
             <a
               href="https://drive.google.com/file/d/1nZ89_UehJXXUPj760qUG7vAM3zXxdz73/view?usp=sharing"

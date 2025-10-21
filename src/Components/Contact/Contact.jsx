@@ -6,7 +6,7 @@ function Contact() {
       
       {/* Section Title */}
       <h2 className="text-2xl md:text-3xl flex justify-center gap-x-2">
-        <span className="text-blue-500">03.</span> What’s Next?
+        <span className="text-blue-500">04.</span> What’s Next?
       </h2>
 
       {/* Main Heading */}

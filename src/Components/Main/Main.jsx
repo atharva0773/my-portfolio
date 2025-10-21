@@ -7,6 +7,7 @@ import About from '../About/About'
 import Work from '../Work/Work'
 import Contact from '../Contact/Contact'
 import Footer from '../Footer/Footer'
+import Skill from '../Skill/Skill'
 
 function Main() {
   const location = useLocation()
@@ -44,10 +45,14 @@ useEffect(() => {
         <Work />
       </section>
 
+      
+      <section id="skill" name="skill">
+        <Skill />
+      </section>
+
       <section id="contact" name="contact">
         <Contact />
       </section>
-
       <Footer />
     </div>
   )
