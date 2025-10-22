@@ -122,6 +122,20 @@ function Navbar() {
           <li>
             03.
             <NavLink
+              to="/skill"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `ml-1 transition-colors duration-200 hover:text-blue-400 ${
+                  isActive ? "text-blue-400" : "text-gray-300"
+                }`
+              }
+            >
+              skill
+            </NavLink>
+          </li>
+          <li>
+            04.
+            <NavLink
               to="/contact"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
