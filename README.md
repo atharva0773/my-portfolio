@@ -1,16 +1,83 @@
-# React + Vite
+<h1 align="center">👋 Hi, I’m Atharva Singh</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3 align="center">Full-Stack Developer | MERN | Backend | UI/UX Enthusiast</h3>
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=38BDF8"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-001e2b?style=for-the-badge&logo=mongodb&logoColor=4EA94B"/>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌐 Live Portfolio  
+👉 **https://my-portfolio-six-nu-22.vercel.app/**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📌 About This Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is my **personal portfolio website**, created to showcase my projects, technical skills, and development experience.  
+Built with modern web technologies, it features a smooth UI, responsive design, and clean code architecture.
+
+---
+
+## 🖥️ Features
+
+- 🎨 Modern & responsive UI  
+- ⚡ Built with **React + Vite**  
+- 🌀 Styled with **TailwindCSS**  
+- 🧩 Dynamic project section  
+- 📱 Fully responsive for mobile & desktop  
+- 🚀 Optimized for performance  
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|---------|--------------|
+| **Frontend** | React.js, TailwindCSS |
+| **Build Tool** | Vite |
+| **Icons** | React Icons |
+| **Language** | JavaScript (ES6+) |
+
+---
+
+## 📂 Folder Structure
+
+my-portfolio/
+│
+├── public/ # Static assets
+│
+├── src/
+│ ├── assets/ # Images & project assets
+│ ├── components/ # Reusable UI components
+│ │ ├── Work.jsx # Projects section
+│ ├── App.jsx
+│ ├── index.jsx
+│
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+
+
+## 🚀 Installation & Running Locally
+
+Clone the repo:
+
+```bash
+git clone https://github.com/atharva0773/my-portfolio
+cd my-portfolio
+
+npm install
+
+npm run dev
+
+http://localhost:5173
+
+
+
+
