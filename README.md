@@ -43,21 +43,3 @@ Built with modern web technologies, it features a smooth UI, responsive design, 
 | **Icons** | React Icons |
 | **Language** | JavaScript (ES6+) |
 
----
-
-## 📂 Folder Structure
-my-portfolio/
-│
-├── public/ # Static assets
-│
-├── src/
-│ ├── assets/ # Images & project assets
-│ ├── components/ # Reusable UI components
-│ │ ├── Work.jsx # Projects section
-│ ├── App.jsx
-│ ├── index.jsx
-│
-├── package.json
-├── tailwind.config.js
-├── vite.config.js
-└── README.md
