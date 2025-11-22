@@ -46,7 +46,6 @@ Built with modern web technologies, it features a smooth UI, responsive design, 
 ---
 
 ## 📂 Folder Structure
-
 my-portfolio/
 │
 ├── public/ # Static assets
@@ -62,22 +61,3 @@ my-portfolio/
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
-
-
-## 🚀 Installation & Running Locally
-
-Clone the repo:
-
-```bash
-git clone https://github.com/atharva0773/my-portfolio
-cd my-portfolio
-
-npm install
-
-npm run dev
-
-http://localhost:5173
-
-
-
-
