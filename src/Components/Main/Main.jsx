@@ -1,56 +1,68 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { scroller } from 'react-scroll'
 
 import Hero from '../Hero/Hero'
 import About from '../About/About'
+import Experience from '../Experience/Experience'
+import Marquee from '../Marquee/Marquee'
 import Work from '../Work/Work'
+import Skill from '../Skill/Skill'
+import Certifications from '../Certifications/Certifications'
 import Contact from '../Contact/Contact'
 import Footer from '../Footer/Footer'
-import Skill from '../Skill/Skill'
+
+const NAV_OFFSET = 80
+
+function scrollToSection(id) {
+  if (!id || id === 'hero') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    return
+  }
+
+  const el = document.getElementById(id)
+  if (!el) return
+
+  const top = el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET
+  window.scrollTo({ top, behavior: 'smooth' })
+}
 
 function Main() {
-  const location = useLocation()
+  const { pathname } = useLocation()
 
-  // Scroll to section when route changes
-useEffect(() => {
-    const section = location.pathname.replace('/', ''); 
-
-    if (section) {
-      requestAnimationFrame(() => {
-        scroller.scrollTo(section, {
-          duration: 800,
-          smooth: 'easeInOutQuart',
-          offset: -50,
-        });
-      });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
     }
-  }, [location]);
+  }, [])
 
-
+  useEffect(() => {
+    const section = pathname.replace(/^\/+|\/+$/g, '') || 'hero'
+    const frame = requestAnimationFrame(() => scrollToSection(section))
+    return () => cancelAnimationFrame(frame)
+  }, [pathname])
 
   return (
-    <div>
-      <section id="hero" name="hero">
+    <div className="mx-auto max-w-6xl">
+      <section id="hero">
         <Hero />
       </section>
-
-      <section id="about" name="about">
+      <section id="about">
         <About />
       </section>
-
-      <section id="work" name="work">
+      <section id="experience">
+        <Experience />
+      </section>
+      <Marquee />
+      <section id="work">
         <Work />
       </section>
-
-      
-      <section id="skill" name="skill">
+      <section id="skill">
         <Skill />
       </section>
-
-      <section id="contact" name="contact">
+      <section id="certs">
+        <Certifications />
+      </section>
+      <section id="contact">
         <Contact />
       </section>
       <Footer />

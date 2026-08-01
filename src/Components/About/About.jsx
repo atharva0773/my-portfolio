@@ -1,71 +1,104 @@
-import React from 'react'
-import profile from "../../assets/profile/profile.jpg";
+import profile from '../../assets/profile/profile.jpg'
+import { useReveal } from '../../hooks/useReveal'
+import { useCountUp } from '../../hooks/useCountUp'
+
+const stack = [
+  'JavaScript',
+  'React.js',
+  'Node.js',
+  'MongoDB',
+  'C++',
+  'Java',
+]
+
+function Stat({ value, suffix = '', label, decimals = 0 }) {
+  const target = decimals ? value * 10 ** decimals : value
+  const { ref, value: n } = useCountUp(target)
+  const display = decimals ? (n / 10 ** decimals).toFixed(decimals) : n
+
+  return (
+    <div ref={ref} className="stat-chip border-t border-ink/10 pt-3">
+      <p className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+        {display}
+        {suffix}
+      </p>
+      <p className="mt-1 text-xs tracking-[0.16em] text-ink-soft uppercase">
+        {label}
+      </p>
+    </div>
+  )
+}
 
 function About() {
+  const ref = useReveal()
+  const textRef = useReveal()
+  const photoRef = useReveal()
+  const statsRef = useReveal()
+
   return (
-    <section id="about" className="min-h-screen text-stone-400 px-4 md:px-16 lg:px-32 py-16 mb-16">
-      
-      {/* Section Title */}
-      <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-8">
-        <span className="text-blue-500">01. </span> About Me
+    <section className="reveal scroll-mt-24 py-24 md:py-32" ref={ref}>
+      <p className="font-display text-sm font-semibold tracking-[0.2em] text-signal uppercase">
+        01 — About
+      </p>
+      <h2 className="title-reveal mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-5xl">
+        Curious builder. Clear interfaces.
       </h2>
 
-      {/* Content: Text + Image */}
-      <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-        
-        {/* Text Section */}
-        <div className="flex-1 space-y-4">
-          <p className="text-base sm:text-lg md:text-xl">
-            Hello! My name is Atharva Singh, and I’m a Computer Science undergraduate with a passion for 
-            building scalable and user-friendly web applications. My journey into development began with a 
-            curiosity to understand how websites work, which quickly evolved into designing and building 
-            full-stack solutions that combine creativity and performance.
+      <div
+        ref={statsRef}
+        className="stagger mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4"
+      >
+        <Stat value={450} suffix="+" label="Problems solved" />
+        <Stat value={3} suffix="★" label="CodeChef" />
+        <Stat value={7.3} decimals={1} label="CGPA / 10" />
+        <Stat value={2026} label="Graduation" />
+      </div>
+
+      <div className="mt-14 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+        <div
+          ref={textRef}
+          className="reveal-left stagger space-y-5 text-base leading-relaxed text-ink-soft sm:text-lg"
+        >
+          <p>
+            I&apos;m Atharva Singh, a B.Tech Computer Science student at ABES
+            Engineering College (2026, CGPA 7.3/10). I build full-stack web apps
+            with React, Node.js, and MongoDB — with a focus on clean UX,
+            solid APIs, and accessible interfaces.
           </p>
-          <p className="text-base sm:text-lg md:text-xl">
-            I specialize in working with modern technologies like 
-            <span className="text-blue-400"> ReactJS</span>, 
-            <span className="text-blue-400"> Node.js</span>, and 
-            <span className="text-blue-400"> Firebase</span> 
-            to craft responsive applications. I enjoy turning ideas into reality through 
-            clean, efficient, and maintainable code — whether it’s developing a real-time email app like 
-            <span className="text-blue-400"> FireMail</span> or building tools that enhance everyday user experiences.
+          <p>
+            At Infopro Learning I work as a Junior HTML Developer improving
+            accessibility against WCAG guidelines using semantic HTML, ARIA, and
+            keyboard-first patterns. Outside work I&apos;ve solved{' '}
+            <span className="font-medium text-ink">450+ DSA problems</span> and
+            hold a <span className="font-medium text-ink">3★ CodeChef</span> rating.
           </p>
-          <p className="text-base sm:text-lg md:text-xl">
-            When I’m not coding, I’m often exploring cloud, refining my problem-solving skills on 
-            platforms like LeetCode, Codechef, HackerRank, or contributing to college tech fests. I’m always eager to learn, collaborate, 
-            and work on projects that push my technical and creative boundaries.
+          <p>
+            I care about shipping things that are fast, maintainable, and usable
+            for everyone — from REST APIs and JWT auth to thoughtful frontend
+            polish.
           </p>
 
-          {/* Skills List */}
-          <div className="flex flex-col sm:flex-row sm:justify-between gap-4 mt-4 text-stone-300">
-            <ul className="space-y-2">
-              <li className="hover:text-blue-400 transition-colors hover:underline">JavaScript (ES6+)</li>
-              <li className="hover:text-blue-400 transition-colors hover:underline">React</li>
-              <li className="hover:text-blue-400 transition-colors hover:underline">Node.js</li>
-            </ul>
-            <ul className="space-y-2">
-              <li className="hover:text-blue-400 transition-colors hover:underline">HTML</li>
-              <li className="hover:text-blue-400 transition-colors hover:underline">CSS</li>
-              <li className="hover:text-blue-400 transition-colors hover:underline">Redux</li>
-            </ul>
-          </div>
+          <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-ink sm:text-base">
+            {stack.map((item) => (
+              <li key={item} className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Image Section */}
-        <div className="flex-1 flex justify-center mt-6 md:mt-0">
+        <div
+          ref={photoRef}
+          className="reveal-right photo-frame relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end"
+        >
+          <div className="photo-outline absolute -inset-3 translate-x-3 translate-y-3 border border-signal/40" />
           <img
             src={profile}
-            alt="profile"
-            className="
-              w-56 h-76 sm:w-56 sm:h-76 md:w-72 md:h-92
-              rounded-lg border-2 border-transparent
-              hover:border-blue-400 hover:scale-105
-              transition-transform duration-300
-              object-cover
-            "
+            alt="Atharva Singh"
+            className="relative aspect-[4/5] w-full object-cover grayscale"
           />
         </div>
-
       </div>
     </section>
   )

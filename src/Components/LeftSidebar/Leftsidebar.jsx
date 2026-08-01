@@ -1,34 +1,35 @@
-import React from 'react'
-import { FaGithub } from "react-icons/fa6";
-import { FaInstagram ,FaLinkedinIn} from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
+const socials = [
+  { href: 'https://github.com/atharva0773', icon: FaGithub, label: 'GitHub' },
+  { href: 'https://www.instagram.com/atharva0773/', icon: FaInstagram, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/in/atharva-s-963425221/', icon: FaLinkedinIn, label: 'LinkedIn' },
+]
 
 function Leftsidebar() {
   return (
-    
-      <ul className=' w-20 ml-3 fixed flex  bottom-0 flex-col justify-center'>
-        <li className='flex justify-center m-6  text-stone-400'>
-          <a href='https://github.com/atharva0773' className=' hover:text-blue-400 transition-colors' target='_blank'>
-            <FaGithub  size={24}/>
-
-          </a>
-        </li>
-        <li className='flex justify-center m-6  text-stone-400'>
-          <a href='https://www.instagram.com/atharva0773/' className=' hover:text-blue-400 transition-colors' target='_blank'>
-            <FaInstagram  size={24}/>
-          </a>
-        </li>
-        <li className='flex justify-center m-6 mb-15 text-stone-400'>
-          <a href='https://www.linkedin.com/in/atharva-s-963425221/' className=' hover:text-blue-400 transition-colors' target='_blank'>
-            <FaLinkedinIn   size={24}/>
-          </a>
-        </li>
-      <li>
-         <div className="w-px  mt-0 ml-10 h-40 bg-stone-400"></div>
-      </li>
-        
+    <aside className="sidebar-enter pointer-events-none fixed bottom-0 left-0 z-40 hidden w-16 flex-col items-center md:flex lg:w-20">
+      <ul className="pointer-events-auto mb-0 flex flex-col items-center gap-5 pb-2">
+        {socials.map(({ href, icon: Icon, label }, index) => (
+          <li
+            key={label}
+            className="animate-float"
+            style={{ animationDelay: `${index * 0.35}s` }}
+          >
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="hover-icon text-ink-soft"
+            >
+              <Icon size={20} />
+            </a>
+          </li>
+        ))}
       </ul>
-    
+      <div className="sidebar-line mt-5 h-28 w-px bg-ink/25" />
+    </aside>
   )
 }
 

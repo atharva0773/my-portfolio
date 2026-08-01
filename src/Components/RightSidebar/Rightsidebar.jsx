@@ -1,20 +1,16 @@
-import React from "react";
-
 function Rightsidebar() {
   return (
-    <div className="fixed bottom-0 w-30 right-0 flex flex-col items-center text-stone-400 z-30">
-      {/* Email rotated vertically */}
+    <aside className="sidebar-enter pointer-events-none fixed bottom-0 right-0 z-40 hidden w-16 flex-col items-center md:flex lg:w-20">
       <a
-        href="mailto:atharvasingh@gmail.com"
-        className="mb-25 text-sm tracking-widest rotate-90 origin-bottom hover:text-blue-400 transition-colors"
+        href="mailto:atharvasingh0072@gmail.com"
+        className="pointer-events-auto mb-24 text-[0.7rem] tracking-[0.22em] text-ink-soft transition-all duration-300 hover:-translate-y-1 hover:text-signal"
+        style={{ writingMode: 'vertical-rl' }}
       >
-        atharvasingh@gmail.com
+        atharvasingh0072@gmail.com
       </a>
-
-      {/* Vertical line */}
-      <div className="w-px ml-3 h-30 bg-stone-400"></div>
-    </div>
-  );
+      <div className="sidebar-line h-28 w-px bg-ink/25" />
+    </aside>
+  )
 }
 
-export default Rightsidebar;
+export default Rightsidebar
