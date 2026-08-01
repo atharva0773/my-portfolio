@@ -13,7 +13,7 @@ const links = [
 ]
 
 const resumeUrl =
-  'https://drive.google.com/file/d/1nZ89_UehJXXUPj760qUG7vAM3zXxdz73/view?usp=sharing'
+  'https://drive.google.com/file/d/11qAuZp2cklnhePP5mdIUs5R-wNkokA-X/view?usp=sharing'
 
 const NAV_OFFSET = 80
 

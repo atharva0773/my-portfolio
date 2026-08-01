@@ -6,7 +6,7 @@ const email = 'atharvasingh0072@gmail.com'
 const phone = '+917880479526'
 const linkedIn = 'https://www.linkedin.com/in/atharva-s-963425221/'
 const resumeUrl =
-  'https://drive.google.com/file/d/1nZ89_UehJXXUPj760qUG7vAM3zXxdz73/view?usp=sharing'
+  'https://drive.google.com/file/d/11qAuZp2cklnhePP5mdIUs5R-wNkokA-X/view?usp=sharing'
 
 function HireModal({ open, onClose }) {
   const [copied, setCopied] = useState(false)
