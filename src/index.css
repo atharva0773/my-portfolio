@@ -613,6 +613,9 @@ html.modal-open .orb {
     transform: translateY(0);
   }
 }
+
+/* Magnetic buttons */
+.magnetic {
   display: inline-flex;
   align-items: center;
   justify-content: center;
