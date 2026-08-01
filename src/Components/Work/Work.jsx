@@ -24,7 +24,7 @@ const projects = [
     live: 'https://meeting-schedular-nu.vercel.app',
     repo: 'https://github.com/atharva0773/meeting-schedular_',
     image: null,
-    tone: 'from-[#1a1210] to-[#5c1824]',
+    tone: 'from-[#1c1917] to-[#9a3412]',
     period: 'June 2025 – July 2025',
   },
   {

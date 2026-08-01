@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import profile from '../../assets/profile/profile.jpg'
 import Magnetic from '../Magnetic/Magnetic'
+import AvailabilityBadge from '../AvailabilityBadge/AvailabilityBadge'
+import { useHire } from '../HireModal/HireContext'
 
 const resumeUrl =
   'https://drive.google.com/file/d/1nZ89_UehJXXUPj760qUG7vAM3zXxdz73/view?usp=sharing'
@@ -21,6 +23,7 @@ function splitLetters(text, baseDelay = 0) {
 function Hero() {
   const navigate = useNavigate()
   const visualRef = useRef(null)
+  const { openHire } = useHire()
 
   useEffect(() => {
     const el = visualRef.current
@@ -67,9 +70,8 @@ function Hero() {
       </div>
 
       <div className="relative z-10 max-w-3xl">
-        <p className="animate-rise mb-4 text-sm font-medium tracking-wide text-signal">
-          Available for roles · Full-stack
-        </p>
+        <AvailabilityBadge className="animate-rise mb-6" />
+
         <h1 className="font-display text-[clamp(3.25rem,12vw,7.5rem)] leading-[0.9] font-extrabold tracking-tight text-ink">
           {splitLetters('Atharva', 0.05)}
           <span className="block text-[0.72em] text-ink/80">
@@ -77,16 +79,24 @@ function Hero() {
           </span>
         </h1>
 
-        <p className="animate-rise delay-2 mt-6 max-w-lg font-display text-xl font-semibold tracking-tight text-signal sm:text-2xl md:text-3xl">
+        <p className="animate-rise delay-2 mt-6 max-w-lg font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl md:text-3xl">
           I build things for the web.
         </p>
 
         <p className="animate-rise delay-3 mt-4 max-w-md text-base leading-relaxed text-ink-soft sm:text-lg">
-          CS undergrad &amp; Junior HTML Developer — React, Node, MongoDB, and
-          accessible interfaces. 450+ problems solved.
+          Full-stack developer (React, Node, MongoDB) — currently Junior HTML
+          Developer at Infopro Learning. Actively looking for full-time
+          opportunities.
         </p>
 
         <div className="animate-rise delay-4 mt-9 flex flex-wrap items-center gap-4">
+          <Magnetic
+            type="button"
+            onClick={openHire}
+            className="bg-signal px-6 py-3 text-sm font-semibold tracking-wide text-mist"
+          >
+            Hire me
+          </Magnetic>
           <Magnetic
             type="button"
             onClick={() => navigate('/work')}

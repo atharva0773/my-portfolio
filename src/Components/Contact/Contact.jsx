@@ -1,5 +1,6 @@
 import { useReveal } from '../../hooks/useReveal'
 import Magnetic from '../Magnetic/Magnetic'
+import AvailabilityBadge from '../AvailabilityBadge/AvailabilityBadge'
 
 function Contact() {
   const ref = useReveal()
@@ -12,12 +13,16 @@ function Contact() {
       <p className="font-display text-sm font-semibold tracking-[0.2em] text-signal uppercase">
         06 — Contact
       </p>
-      <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl md:text-6xl">
+
+      <AvailabilityBadge className="mt-6" />
+
+      <h2 className="mt-6 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl md:text-6xl">
         Let&apos;s build something
       </h2>
-      <p className="mt-2 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
-        Open to roles and collaborations where I can contribute, learn, and
-        ship thoughtful product. Based in Uttar Pradesh — happy to connect.
+      <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
+        Looking for a full-time software / full-stack role where I can ship,
+        learn, and grow. Based in Uttar Pradesh — open to remote or on-site.
+        Click the status above to browse roles I&apos;m targeting.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm text-ink-soft">
@@ -35,11 +40,11 @@ function Contact() {
 
       <Magnetic
         as="a"
-        href="mailto:atharvasingh0072@gmail.com"
+        href="mailto:atharvasingh0072@gmail.com?subject=Full-time%20role%20opportunity"
         className="mt-8 bg-signal px-8 py-3.5 text-base font-semibold text-mist"
         strength={0.4}
       >
-        Say hello
+        Email about a role
       </Magnetic>
     </section>
   )

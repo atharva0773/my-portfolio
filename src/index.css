@@ -3,13 +3,13 @@
 @theme {
   --font-display: "Syne", sans-serif;
   --font-body: "Figtree", sans-serif;
-  --color-ink: #1a1210;
-  --color-ink-soft: #6a574f;
-  --color-paper: #ebe4db;
-  --color-paper-deep: #ddd3c7;
-  --color-signal: #9b2c3f;
-  --color-signal-bright: #c23a52;
-  --color-mist: #faf6f1;
+  --color-ink: #1c1917;
+  --color-ink-soft: #57534e;
+  --color-paper: #e7e5e4;
+  --color-paper-deep: #d6d3d1;
+  --color-signal: #9a3412;
+  --color-signal-bright: #c2410c;
+  --color-mist: #fafaf9;
 }
 
 @layer base {
@@ -37,10 +37,10 @@
 .studio-bg {
   background-color: var(--color-paper);
   background-image:
-    radial-gradient(ellipse 90% 55% at 8% -8%, rgba(155, 44, 63, 0.14), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 100% 10%, rgba(180, 120, 70, 0.12), transparent 50%),
-    radial-gradient(ellipse 55% 40% at 45% 100%, rgba(90, 50, 40, 0.08), transparent 55%),
-    linear-gradient(180deg, #f0e9e0 0%, #ebe4db 45%, #e4dbd0 100%);
+    radial-gradient(ellipse 90% 55% at 8% -8%, rgba(154, 52, 18, 0.08), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 10%, rgba(68, 64, 60, 0.08), transparent 50%),
+    radial-gradient(ellipse 55% 40% at 45% 100%, rgba(28, 25, 23, 0.05), transparent 55%),
+    linear-gradient(180deg, #ebe8e6 0%, #e7e5e4 45%, #ddd9d6 100%);
 }
 
 .studio-grain::before {
@@ -185,7 +185,7 @@
   right: 6%;
   width: 280px;
   height: 280px;
-  background: color-mix(in oklab, #b47846 18%, transparent);
+  background: color-mix(in oklab, #a8a29e 16%, transparent);
   animation-delay: -5s;
   animation-duration: 18s;
 }
@@ -475,6 +475,27 @@
   margin: -7px 0 0 -7px;
 }
 
+/* Restore normal cursor while modal is open (overrides .has-cursor { cursor: none }) */
+html.modal-open,
+html.modal-open * {
+  cursor: auto !important;
+}
+
+html.modal-open .cursor-blob {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Hide chrome while hire modal is open */
+html.modal-open nav,
+html.modal-open aside,
+html.modal-open .scroll-progress,
+html.modal-open .graphic-field,
+html.modal-open .orb {
+  display: none !important;
+}
+
 /* Page transition wipe */
 .page-transition {
   position: fixed;
@@ -555,8 +576,43 @@
   }
 }
 
-/* Magnetic buttons */
-.magnetic {
+/* Hire modal */
+.hire-modal-backdrop {
+  animation: fade-in 0.25s ease both;
+}
+
+.hire-modal-panel {
+  animation: hire-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  isolation: isolate;
+  background-color: var(--color-mist);
+}
+
+@keyframes hire-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Role swap on availability badge */
+.role-swap {
+  animation: role-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes role-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   display: inline-flex;
   align-items: center;
   justify-content: center;
